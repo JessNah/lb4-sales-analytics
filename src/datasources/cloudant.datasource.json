@@ -1,0 +1,10 @@
+{
+  "name": "cloudant",
+  "connector": "cloudant",
+  "url": "https://3a68c995-02c3-4167-95ec-aec94867d530-bluemix:41b928df6414d4fb45993b061209f066f88d7bebca6fd4fff9fc224cc92fc2a8@3a68c995-02c3-4167-95ec-aec94867d530-bluemix.cloudant.com/",
+  "database": "lb4-sales",
+  "username": "",
+  "password": "",
+  "modelIndex": "",
+  "globalLimit": 1000
+}

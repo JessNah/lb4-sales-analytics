@@ -1,0 +1,27 @@
+{
+  "name": "Sales",
+  "base": "Entity",
+  "properties": {
+      "id": {
+          "type": "number",
+          "id": true,
+          "required": false
+      },
+      "description": {
+          "type": "string",
+          "required": false
+      },
+      "date": {
+        "type": "date",
+        "required": true
+      },
+      "country": {
+        "type": "string",
+        "required": true
+      },
+      "total": {
+        "type": "number",
+        "required": true
+      }
+  }
+}
