@@ -1,0 +1,10 @@
+{
+  "name": "BridgedbCloudant",
+  "connector": "cloudant",
+  "url": "https://cdd3c770-e7e6-4128-a68d-a020de9f40be-bluemix:91ca2a40dad1bf410ebd21b50adc2b0dee39302fbe262fa6ed7995be2f739126@cdd3c770-e7e6-4128-a68d-a020de9f40be-bluemix.cloudantnosqldb.appdomain.cloud",
+  "database": "bridgedbcloudant",
+  "username": "cdd3c770-e7e6-4128-a68d-a020de9f40be-bluemix",
+  "password": "91ca2a40dad1bf410ebd21b50adc2b0dee39302fbe262fa6ed7995be2f739126",
+  "modelIndex": "loopback__model__bridgedbcloudant",
+  "globalLimit": 1000
+}
