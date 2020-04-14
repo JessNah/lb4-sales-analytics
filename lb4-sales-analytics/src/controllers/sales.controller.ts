@@ -1,3 +1,6 @@
+/* tslint:disable */
+/* eslint:disable */
+
 import {
   Count,
   CountSchema,
@@ -171,62 +174,63 @@ export class SalesController {
     await this.salesRepository.deleteById(id);
   }
 
-  @get('/sales/analytics/{country}/{year}/{month}', {
-    responses: {
-      '200': {
-        description: 'Number of sales by country in a date YYYY/MM range.',
-        content: {'application/json': {schema: CountSchema}},
-      },
-    },
-  })
-  async analyticsMonthAndYear(
-    @param.path.string('country') country: string,
-    @param.path.number('year') year: number,
-    @param.path.number('month') month: number,
-  ): Promise<number> {
-    const filter = {
-      where: {
-        country,
-        date: {
-          between: [
-            new Date(year, month - 1).toISOString(),
-            new Date(year, month).toISOString(),
-          ] as [string, string],
-        },
-      },
-    };
+  // @get('/sales/analytics/{country}/{year}/{month}', {
+  //   responses: {
+  //     '200': {
+  //       description: 'Number of sales by country in a date YYYY/MM range.',
+  //       content: {'application/json': {schema: CountSchema}},
+  //     },
+  //   },
+  // })
+  // async analyticsMonthAndYear(
+  //   @param.path.string('country') country: string,
+  //   @param.path.number('year') year: number,
+  //   @param.path.number('month') month: number,
+  // ): Promise<number> {
+  //   const filter = {
+  //     where: {
+  //       country,
+  //       date: {
+  //         between: [
+  //           new Date(year, month - 1).toISOString(),
+  //           new Date(year, month).toISOString(),
+  //         ] as [string, string],
+  //       },
+  //     },
+  //   };
 
-    const res = await this.salesRepository.find(filter);
+  //   const res = await this.salesRepository.find(filter);
 
-    return res.length;
-  }
+  //   return res.length;
+  // }
 
-  @get('/sales/analytics/{country}/{year}', {
-    responses: {
-      '200': {
-        description: 'Number of sales by country for a year.',
-        content: {'application/json': {schema: CountSchema}},
-      },
-    },
-  })
-  async analyticsYear(
-    @param.path.string('country') country: string,
-    @param.path.number('year') year: number,
-  ): Promise<number> {
-    const filter = {
-      where: {
-        country,
-        date: {
-          between: [
-            new Date(year, 0).toISOString(),
-            new Date(year + 1, 0).toISOString(),
-          ] as [string, string],
-        },
-      },
-    };
+  // @get('/sales/analytics/{country}/{year}', {
+  //   responses: {
+  //     '200': {
+  //       description: 'Number of sales by country for a year.',
+  //       content: {'application/json': {schema: CountSchema}},
+  //     },
+  //   },
+  // })
+  // async analyticsYear(
+  //   @param.path.string('country') country: string,
+  //   @param.path.number('year') year: number,
+  // ): Promise<number> {
+  //   const filter = {
+  //     where: {
+  //       country,
+  //       date: {
+  //         between: [
+  //           new Date(year, 0).toISOString(),
+  //           new Date(year + 1, 0).toISOString(),
+  //         ] as [string, string],
+  //       },
+  //       or: false
+  //     },
+  //   };
 
-    const res = await this.salesRepository.find(filter);
+  //   const res = await this.salesRepository.find(filter);
 
-    return res.length;
-  }
+  //   return res.length;
+  // }
 }
